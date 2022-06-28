@@ -1,0 +1,29 @@
+﻿@model Movie;
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<form asp-action="Edit">
+  <div class="form-group">
+    <label for="exampleInputEmail1">ID</label>
+    <input type="text" name="id" value="@Model.Id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter ID">
+    
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Name</label>
+    <input type="text" name="name" value="@Model.Name" class="form-control" id="exampleInputPassword1" placeholder="Name">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Description</label>
+    <input type="text" name="description" value="@Model.Description" class="form-control" id="exampleInputPassword1" placeholder="Decription">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Image</label>
+    <input type="text" name="imageurl" value="@Model.ImageUrl" class="form-control" id="exampleInputPassword1" placeholder="URL">
+  </div>
+
+  
+  <button type="submit" class="btn btn-primary">Update</button>
+</form>

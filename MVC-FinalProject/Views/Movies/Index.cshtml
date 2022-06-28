@@ -1,0 +1,63 @@
+﻿@model List<Movie>
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h1>Lists of all the Movies</h1>
+
+ <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+    <!--Controls-->
+    <div class="controls-top">
+      <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
+      <a class="btn-floating" href="#multi-item-example" data-slide="next"><i
+                                                                              class="fas fa-chevron-right"></i></a>
+    </div>
+    <!--/.Controls-->
+
+    <!--Indicators-->
+    <ol class="carousel-indicators">
+      <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+      <li data-target="#multi-item-example" data-slide-to="1"></li>
+
+    </ol>
+    <!--/.Indicators-->
+
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+
+      <!--First slide-->
+      <div class="carousel-item active">
+
+
+@foreach (var item in Model)
+{
+    
+
+        <div class="col-md-3" style="float:left">
+          <div class="card mb-5">
+            <img class="card-img-top"
+                 src="@item.ImageUrl" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">@item.Name</h4>
+              <p class="card-text">@item.Description</p>
+              <a class="btn btn-primary btn-lg mx-3 my-3" asp-action="Details"  asp-route-id="@item.Id">Read more</a>
+            </div>
+          </div>
+        </div>
+     
+     
+   
+    
+}
+</div>
+</div>
+</div>
+
+ 
+
+
+   
