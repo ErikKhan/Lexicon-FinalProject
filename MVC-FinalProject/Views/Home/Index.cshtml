@@ -23,35 +23,30 @@
 
 <h1 style="text-align:center">Lists of all the Movies</h1>
 
+<div class="container my-5">
+
  <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
 
     <!--Controls-->
-    <div class="controls-top">
-      <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
-      <a class="btn-floating" href="#multi-item-example" data-slide="next"><i
-                                                                              class="fas fa-chevron-right"></i></a>
-    </div>
+    
     <!--/.Controls-->
 
     <!--Indicators-->
-    <ol class="carousel-indicators">
-      <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
-      <li data-target="#multi-item-example" data-slide-to="1"></li>
-
-    </ol>
+    
     <!--/.Indicators-->
 
     <!--Slides-->
-    <div class="carousel-inner" role="listbox">
-
-      <!--First slide-->
-      <div class="carousel-item active">
-
+      <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active">
 
 @foreach (var item in Model)
 {
     
 
+      <!--First slide-->
+      
+    
+        
         <div class="col-md-3" style="float:left">
           <div class="card mb-5">
             <img class="card-img-top"
@@ -64,13 +59,18 @@
           </div>
         </div>
      
-     
+    
+
    
     
 }
+
 </div>
 </div>
 </div>
+
+        </div> 
+
 
  
 

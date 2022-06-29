@@ -8,29 +8,29 @@
 }
 
 <h1>Do you really want to Delete this Movie</h1>
-<table class="table table-bordered border-dark">
-        <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Description</th>
-                 <th scope="col">Image</th>
-              
-            </tr>
-        </thead>
-        <tbody>
-                      
-                           <tr>
-                             <th scope="row">@Model.Id</th>
-                            <td>@Model.Name</td>
-                            <td>@Model.Description</td>
-                            <td>@Model.ImageUrl</td>
-                            
-                        </tr>
-                        
-           
-        </tbody>
-    </table>
+<div class="container">
+    <br>
+    <div class="card">
+        <div class="card-body">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="@Model.ImageUrl" alt="" class="img-fluid">
+            </div>
+            <div class="col-md-8">
+                <h3 class="text-center">
+                    @Model.Name 
+                </h3>
+                <p>@Model.Description</p>
+                
+                 
+                
+                 
+               
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
 
 <form asp-action = "DeleteMovie">
     <input type="hidden" value="@Model.Id" name="id"/><br>

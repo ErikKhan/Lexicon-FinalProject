@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MVC_FinalProject.Data;
 using MVC_FinalProject.Models;
 
@@ -11,7 +12,7 @@ namespace MVC_FinalProject.Controllers
         {
             Context = context;
         }
-
+        [Authorize]
         public IActionResult Index()
         {
             List<Movie> AllMovies = Context.Movies.ToList();
@@ -22,6 +23,7 @@ namespace MVC_FinalProject.Controllers
             List<Movie> AllMovies = Context.Movies.ToList();
             return View(AllMovies);
         }
+        [Authorize(Roles = "admin")]
         public IActionResult Create()
         {
             return View();
@@ -37,8 +39,9 @@ namespace MVC_FinalProject.Controllers
             Context.Movies.Add(Movie);
             Context.SaveChanges();
             System.Diagnostics.Debug.WriteLine($"ID: {Movie.Id} Name: {Movie.Name} Price: {Movie.Description} imageURl: {Movie.ImageUrl}");
-            return RedirectToAction("GetMovie", Movie);
+            return RedirectToAction("Index", Movie);
         }
+        [Authorize]
         public IActionResult Edit(int id)
         {
             var x = Context.Movies.FirstOrDefault(x => x.Id == id);
@@ -54,6 +57,7 @@ namespace MVC_FinalProject.Controllers
             Context.SaveChanges();
             return RedirectToAction("index");
         }
+        [Authorize(Roles = "admin")]
         public IActionResult Delete(int id)
         {
             Movie Movie = Context.Movies.FirstOrDefault(x => x.Id == id);
