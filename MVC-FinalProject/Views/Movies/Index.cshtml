@@ -6,9 +6,20 @@
 @{
 }
 
-<h1>Lists of all the Movies</h1>
+<h2 style="text-align:center">Lists of all the Movies</h2>
+<form asp-action="Index" method="get">
+<div class="input-group">
+  <div class="form-outline">
+    <input type="search" id="form1" name="search" value="@ViewData["CurrentFilter"]" class="form-control" />
+    <label class="form-label" for="form1">Search</label>
+  </div>
+  <button type="button" value="Search" class="btn btn-primary">
+    <i class="fas fa-search"></i>
+  </button>
+</div>
+</form>
 
- <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+@* <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
 
     <!--Controls-->
     <div class="controls-top">
@@ -56,8 +67,62 @@
 </div>
 </div>
 </div>
+*@
+<div class="container" id="container">
+@foreach (var item in Model)
+{
+    
+
+          
+   
+    
+
+
+  <section class="mx-auto my-5" style="max-width: 23rem;">
+      
+    <div class="card">
+      <div id="img" class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+        <img src="@item.ImageUrl"   class="img-fluid" />
+        <a href="#!">
+          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+        </a>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title font-weight-bold"><a>@item.Name</a></h5>
+        <ul class="list-unstyled list-inline mb-0">
+          <li class="list-inline-item me-0">
+            <i class="fas fa-star text-warning fa-xs"> </i>
+          </li>
+          <li class="list-inline-item me-0">
+            <i class="fas fa-star text-warning fa-xs"></i>
+          </li>
+          <li class="list-inline-item me-0">
+            <i class="fas fa-star text-warning fa-xs"></i>
+          </li>
+          <li class="list-inline-item me-0">
+            <i class="fas fa-star text-warning fa-xs"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fas fa-star-half-alt text-warning fa-xs"></i>
+          </li>
+          <li class="list-inline-item">
+            <p class="text-muted">4.5 (413)</p>
+          </li>
+        </ul>
+        <p class="mb-2">$ • HollyView</p>
+        <p class="card-text">
+          @item.Description
+        </p>
+        <hr class="my-4" />
+        
+
+         <a class="btn btn-primary btn-lg mx-3 my-3" asp-action="Details"  asp-route-id="@item.Id">Read more</a>
+      </div>
+    </div>
+    
+  </section>
 
  
+}
 
-
-   
+  </div> 

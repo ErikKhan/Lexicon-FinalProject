@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using MVC_FinalProject.Data;
 using MVC_FinalProject.Models;
 
+
 namespace MVC_FinalProject.Controllers
 {
     public class MoviesController : Controller
@@ -13,11 +14,26 @@ namespace MVC_FinalProject.Controllers
             Context = context;
         }
         [Authorize]
-        public IActionResult Index()
+        public IActionResult Index(string search)
         {
+            ViewData["CurrentFilter"] = search;
             List<Movie> AllMovies = Context.Movies.ToList();
-            return View(AllMovies);
+            List<Movie> moviesTemp = new List<Movie>();
+
+            if (!string.IsNullOrEmpty(search))
+            {
+                moviesTemp = AllMovies.Where(b => b.Name.ToLower().Contains(search)).ToList();
+            }
+            if (moviesTemp.Count > 0) { return View(moviesTemp); }
+            else return View(AllMovies);
         }
+        [HttpGet]
+/*        public IActionResult Index(string search)
+        {
+            var movies = from b in Context.Movies select b;
+            
+            return View(moviesTemp);
+        }*/
         public IActionResult GetMovie()
         {
             List<Movie> AllMovies = Context.Movies.ToList();
