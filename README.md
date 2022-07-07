@@ -31,7 +31,7 @@ full access of the website.<br>
 go to the register page.<br>
 ![authorization](https://user-images.githubusercontent.com/73182090/177758946-9308e7d8-3d7d-4cb5-99aa-62d7e4c8339a.png)
 
-**Stack used in this project:**<br>
+**Tech used in this project:**<br>
 Backend: C#<br>
 DataBase: Microsoft SQL Server. Entity framework<br>
 Front-end: ASP.Net, Razor Pages, CSS, Bootstrap, Javascript.<br>
