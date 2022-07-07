@@ -36,6 +36,6 @@ Backend: C#<br>
 DataBase: Microsoft SQL Server. Entity framework<br>
 Front-end: ASP.Net, Razor Pages, CSS, Bootstrap, Javascript.<br>
 **This is my other project "Blog" where I have used one to many relationship and used ViewModel**
-[One to Many relationship Project](https://github.com/ErikKhan/MyBlogViewModel)
-
-
+[One to Many relationship Project](https://github.com/ErikKhan/MyBlogViewModel)<br>
+**In This project I have connected the backend with React Frontend using WebAPIs**.<br>
+[Connecting React Frontend with WebAPIs](https://github.com/ErikKhan/WebAPI-React)
