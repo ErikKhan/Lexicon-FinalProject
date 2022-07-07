@@ -35,3 +35,5 @@ go to the register page.<br>
 Backend: C#<br>
 DataBase: Microsoft SQL Server. Entity framework<br>
 Front-end: ASP.Net, Razor Pages, CSS, Bootstrap, Javascript.<br>
+This is my other project "Blog" where I have used one to many relationship and used ViewModel
+[One to Many relationship Project](https://github.com/ErikKhan/MyBlogViewModel)
