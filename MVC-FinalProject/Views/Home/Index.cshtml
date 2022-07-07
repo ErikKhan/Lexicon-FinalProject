@@ -5,6 +5,7 @@
 *@
 @{
 }
+
 <div class="p-5 text-center bg-image" style="
       background-image: url('https://www.wallpaperup.com/uploads/wallpapers/2015/12/12/859158/ca5f347b9822ffd634711ff31e311b55-700.jpg');
       height: 400px;
@@ -21,9 +22,30 @@
   </div>
   <br />
 
-<h1 style="text-align:center">Lists of all the Movies</h1>
+<marquee style="font-family: Book Antiqua; color: #FFFFFF" bgcolor="black" direction="up" height="60" behavior="alternate"><h3 id="title">List of all the Movies</h3></marquee>
 
-<div class="container my-5">
+<div class="container">
+      <div class="row">
+          @foreach (var item in Model)
+{
+          <div class="col-sm-4">
+              <div class="card" style="width: 18rem; margin:">
+              <img src="@item.ImageUrl" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">@item.Name</h5>
+                <p class="card-text">@item.Description</p>
+                
+                 <a class="btn btn-primary btn-lg mx-3 my-3" asp-controller="Movies" asp-action="Details"  asp-route-id="@item.Id">Read more</a>
+              </div>
+           </div>
+           </div>
+           }
+           </div>
+           </div>
+
+  
+
+@*<div class="container my-5">
 
  <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
 
@@ -69,10 +91,8 @@
 </div>
 </div>
 
-        </div> 
+        </div> *@
 
-
- 
 
 
    
